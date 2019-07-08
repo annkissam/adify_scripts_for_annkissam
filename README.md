@@ -48,6 +48,20 @@ maintenance, refer the documentation for `adify`.
 
 ## TODO List:
 
-- [ ] Add CI independent of aditya7iyengar/adify
-- [ ] Add CI for mac and ubuntu
+- [X] Add CI independent of aditya7iyengar/adify
+- [X] Add CI for mac and ubuntu
 - [ ] Add more tools
+    * `ruby` 2.3.8 + `bundler`
+    * `ruby` 2.4.2 + `bundler`
+    * `ruby` 2.4.3 + `bundler`
+    * `ruby` 2.4.5 + `bundler`
+    * `ruby` 2.5.3 + `bundler`
+    * `nvim`
+    * `redis` as `docker`
+    * add "eval `docker-machine env 2>/dev/null`" to zshrc
+    * `mysql-client` for OSX (brew install mysql-client) and add "PATH=/usr/local/opt/mysql-client/bin:$PATH" to zshrc
+    * `openssl` (brew install openssl) and add "LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/" to zshrc
+    * `libpq` (brew install libpq) and add "export PATH="/usr/local/opt/libpq/bin:$PATH"" to zshrc
+    * `pg` gem `gem install pg -- --with-opt-dir="/usr/local/opt/libpq"`
+    * `phamtomjs` (brew install phantomjs)
+    * `spectacle` for OSX (brew cask install spectacle)
