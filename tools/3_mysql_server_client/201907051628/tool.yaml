@@ -1,14 +1,14 @@
-name: Docker
-version: 201907072045
-description: Containerization Engine
+name: MySQL Client
+version: 201907051628
+description: MySQL client
 os_commands:
   - os: osx
     installation_strategies:
-      - &brew_cask
-          name: brew_cask
+      - &brew
+          name: brew
           number: 1
           default: true
-          description: Install Docker using Homebrew Cask
+          description: Install MySQL Client using Homebrew
           up:
             pre:
               command: |
@@ -18,11 +18,8 @@ os_commands:
               command: |
                 brew doctor
                 brew update
-                brew search docker
-                brew cask info docker
-                brew cask install docker
+                brew install mysql-client
                 brew cleanup
-                "eval `docker-machine env 2>/dev/null`" >> ~/.zshrc
               success: true
           down:
             pre:
@@ -30,7 +27,7 @@ os_commands:
               success: true
             main:
               command: |
-                brew cask uninstall docker
+                brew uninstall mysql-client
                 brew cleanup
               success: true
   - os: arch_linux
@@ -39,14 +36,14 @@ os_commands:
           name: pacman
           number: 1
           default: true
-          description: Install Docker using Pacman
+          description: Install MySQL Client using Pacman
           up:
             main:
-              command: sudo pacman -S --noconfirm docker
+              command: sudo pacman -S --noconfirm mysql-client
               success: true
           down:
             main:
-              command: sudo pacman -R --noconfirm docker
+              command: sudo pacman -R --noconfirm mysql-client
               success: true
   - os: ubuntu
     installation_strategies:
@@ -54,14 +51,14 @@ os_commands:
           name: apt-get
           number: 1
           default: true
-          description: Install Docker using Apt-Get
+          description: Install MySQL Client using Apt-Get
           up:
             main:
-              command: sudo apt-get install -y docker
+              command: sudo apt-get install -y mysql-client
               success: true
           down:
             main:
-              command: sudo apt-get uninstall -y docker
+              command: sudo apt-get uninstall -y mysql-client
               success: true
   - os: pop_os
     installation_strategies:

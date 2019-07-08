@@ -50,13 +50,13 @@ maintenance, refer the documentation for `adify`.
 
 - [X] Add CI independent of aditya7iyengar/adify
 - [X] Add CI for mac and ubuntu
-- [ ] Add more tools
+- [X] Add more tools
     * `ruby` 2.3.8 + `bundler`
     * `ruby` 2.4.2 + `bundler`
     * `ruby` 2.4.3 + `bundler`
     * `ruby` 2.4.5 + `bundler`
     * `ruby` 2.5.3 + `bundler`
-    * `nvim`
+    * `ruby` 2.6.0 + `bundler`
     * `redis` as `docker`
     * add "eval `docker-machine env 2>/dev/null`" to zshrc
     * `mysql-client` for OSX (brew install mysql-client) and add "PATH=/usr/local/opt/mysql-client/bin:$PATH" to zshrc
@@ -65,3 +65,4 @@ maintenance, refer the documentation for `adify`.
     * `pg` gem `gem install pg -- --with-opt-dir="/usr/local/opt/libpq"`
     * `phamtomjs` (brew install phantomjs)
     * `spectacle` for OSX (brew cask install spectacle)
+    * add `rails` 5

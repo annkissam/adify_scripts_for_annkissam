@@ -1,0 +1,71 @@
+name: Redis Server
+version: 201907051628
+description: Redis server binaries, Relational Database engine
+os_commands:
+  - os: osx
+    installation_strategies:
+      - &docker
+          name: docker
+          number: 1
+          description: Install Redis server using Docker
+          default: true
+          up:
+            pre:
+              command: docker version
+              success: true
+            main:
+              command: |
+                echo -e '\n
+                  alias redisup='docker run -d --name redis --restart unless-stopped -p 6379:6379 redis:5.0.5'
+              success: true
+            post:
+              command: |
+                source ~/.zshrc && redisup
+              success: true
+          down:
+            pre:
+              command: docker rm -f redis
+              success: true
+            main:
+              command: |
+                echo 'Please remove the alias redisup from your ~/.zshrc'
+              success: true
+      - &osx_package_manager
+          name: package_manager
+          number: 2
+          description: Install Redis server using Homebrew
+          up:
+            pre:
+              command: brew help
+              success: true
+            main:
+              command: |
+                brew doctor
+                brew update
+                brew install redis
+                brew tap homebrew/services
+              success: true
+            post:
+              command: brew services start redis
+              success: true
+          down:
+            pre:
+              command: brew help
+              success: true
+            main:
+              command: |
+                brew remove redis
+                brew cleanup
+              success: true
+            post:
+              command: brew services start redis
+              success: false
+  - os: arch_linux
+    installation_strategies:
+      - *docker
+  - os: ubuntu
+    installation_strategies:
+      - *docker
+  - os: pop_os
+    installation_strategies:
+      - *docker
