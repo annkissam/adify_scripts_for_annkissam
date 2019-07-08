@@ -21,7 +21,6 @@ os_commands:
                 brew install libpq
                 brew cleanup
                 echo 'export PATH="/usr/local/opt/libpq/bin:$PATH"' >> ~/.zshrc
-                source ~/.zshrc
               success: true
           down:
             pre:

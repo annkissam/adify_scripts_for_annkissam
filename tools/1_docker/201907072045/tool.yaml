@@ -21,7 +21,6 @@ os_commands:
                 brew search docker
                 brew cask install docker
                 open /Applications/Docker.app
-                source ~/.zshrc
               success: true
           down:
             pre:
