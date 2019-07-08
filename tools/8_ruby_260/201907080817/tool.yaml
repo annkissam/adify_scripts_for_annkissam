@@ -15,7 +15,7 @@ os_commands:
               success: true
             main:
               command: |
-                asdf install ruby 2.6.0
+                RUBY_CONFIGURE_OPTS="--disable-dtrace" asdf install ruby 2.6.0
                 asdf local ruby 2.6.0
                 gem install bundler
               success: true
