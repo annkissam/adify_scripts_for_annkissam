@@ -82,19 +82,19 @@ run_adify_with_ak_configurations() {
   if $noconfirm == true; then
     if $adify_test == true; then
       _announce_info "NO_CONFIRM, ADIFY_TEST"
-      ADIFY_TEST="true" NO_CONFIRM="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools bash <(curl -s $adify_prelude_url)
+      ADIFY_TEST="true" NO_CONFIRM="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools/ bash <(curl -s $adify_prelude_url)
     else
       _announce_info "NO_CONFIRM"
-      NO_CONFIRM="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools bash <(curl -s $adify_prelude_url)
+      NO_CONFIRM="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools/ bash <(curl -s $adify_prelude_url)
     fi
   else
     _announce_info "CONFIRM MODE"
     if $nocleanup == true; then
       _announce_info "NO CLEANUP MODE"
-      NO_CLEANUP="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools bash <(curl -s $adify_prelude_url)
+      NO_CLEANUP="true" TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools/ bash <(curl -s $adify_prelude_url)
     else
       _announce_info "CLEANUP MODE"
-      TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools bash <(curl -s $adify_prelude_url)
+      TOOLS_DIR=${HOME}/.adify_scripts_for_annkissam/tools/ bash <(curl -s $adify_prelude_url)
     fi
   fi
 }
