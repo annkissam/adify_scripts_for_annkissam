@@ -56,7 +56,7 @@ fetch_ak_scripts() {
 run_adify_with_ak_configurations() {
   _announce_step "Running adify with AK scripts"
 
-  TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- https://raw.githubusercontent.com/aditya7iyengar/adify/master/prelude.sh)
+  ADIFY_TEST="${ADIFY_TEST}" NO_CONFIRM="${NO_CONFIRM}" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- https://raw.githubusercontent.com/aditya7iyengar/adify/master/prelude.sh)
 }
 
 main() {

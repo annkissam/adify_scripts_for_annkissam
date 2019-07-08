@@ -31,9 +31,13 @@ This is an extension of `aditya7iyengar/adify` and relies on the hex package
 maintenance, refer the documentation for `adify`.
 
 
-## Best Practices
+## Development
 
-TODO: Add Best Practices
+### CI
+
+- By default CI runs in Mock mode, where it doesn't test everything. This is done
+  to keep the test suite from taking 30 minutes. In order to override it, add
+  `[FULL_TEST_CI]` to the commit message
 
 
 ## TODO List:
