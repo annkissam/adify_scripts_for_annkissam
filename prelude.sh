@@ -5,7 +5,8 @@
 #############
 # This script uses adify's prelude with Annkissam's setup scripts
 
-ADIFY_VERSION=0.1.0
+# ADIFY_VERSION=0.1.0
+ADIFY_VERSION="master"
 
 ## Taken from aditya7iyengar/adify
 ## Start----------------------
