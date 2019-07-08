@@ -74,12 +74,12 @@ run_adify_with_ak_configurations() {
 
   if $noconfirm == true; then
     if $adify_test == true; then
-      ADIFY_TEST="true" NO_CONFIRM="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- $adify_prelude_url)
+      ADIFY_TEST="true" NO_CONFIRM="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
     else
-      NO_CONFIRM="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- $adify_prelude_url)
+      NO_CONFIRM="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
     fi
   else
-    TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- $adify_prelude_url)
+    TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
   fi
 }
 
