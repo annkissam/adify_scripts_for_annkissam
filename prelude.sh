@@ -82,7 +82,7 @@ run_adify_with_ak_configurations() {
       NO_CONFIRM="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
     fi
   else
-      _announce_info "CONFIRM MODE"
+    _announce_info "CONFIRM MODE"
     TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
   fi
 }
