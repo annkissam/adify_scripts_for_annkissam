@@ -15,12 +15,12 @@ os_commands:
               success: true
             main:
               command: |
-                echo "\nalias redisup='docker run -d --name redis --restart unless-stopped -p 6379:6379 redis:5.0.5'"
-                source ~/.zshrc && redisup
+                echo "\nalias redisup='docker run -d --name redis --restart unless-stopped -p 6379:6379 redis:5.0.5'" >> ~/.zshrc
+                echo "\nalias redisup='docker run -d --name redis --restart unless-stopped -p 6379:6379 redis:5.0.5'" >> ~/.bashrc
+                (source ~/.zshrc || source ~/.bashrc) && redisup
               success: true
             post:
-              command: |
-                source ~/.zshrc && redisup
+              command: docker inspect redisup
               success: true
           down:
             pre:

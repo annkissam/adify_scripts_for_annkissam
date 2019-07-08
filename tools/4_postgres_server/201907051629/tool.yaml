@@ -16,7 +16,8 @@ os_commands:
             main:
               command: |
                 echo "\nalias postgresup='docker run -d --name postgres --restart unless-stopped -p 127.0.0.1:5432:5432 -v ~/postgres-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD= postgres'" >> ~/.zshrc
-                source ~/.zshrc && postgresup
+                echo "\nalias postgresup='docker run -d --name postgres --restart unless-stopped -p 127.0.0.1:5432:5432 -v ~/postgres-data:/var/lib/postgresql/data -e POSTGRES_PASSWORD= postgres'" >> ~/.bashrc
+                (source ~/.zshrc || source ~/.bashrc) && postgresup
               success: true
             post:
               command: docker inspect postgres

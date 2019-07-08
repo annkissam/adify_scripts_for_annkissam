@@ -16,7 +16,8 @@ os_commands:
             main:
               command: |
                 echo "\nalias mysqlup='docker run -d --name mysql --restart unless-stopped -p 127.0.0.1:3306:3306 -v ~/mysql-data:/var/lib/mysql -v ~/mysql-conf:/etc/mysql -e MYSQL_ROOT_PASSWORD=password mysql:5.7 --datadir=/var/lib/mysql --user=mysql --server-id=1 --log-bin=/var/lib/mysql/mysql-bin.log --binlog_do_db=test'" >> ~/.zshrc
-                source ~/.zshrc && mysqlup
+                echo "\nalias mysqlup='docker run -d --name mysql --restart unless-stopped -p 127.0.0.1:3306:3306 -v ~/mysql-data:/var/lib/mysql -v ~/mysql-conf:/etc/mysql -e MYSQL_ROOT_PASSWORD=password mysql:5.7 --datadir=/var/lib/mysql --user=mysql --server-id=1 --log-bin=/var/lib/mysql/mysql-bin.log --binlog_do_db=test'" >> ~/.bashrc
+                (source ~/.zshrc || source ~/.bashrc) && mysqlup
               success: true
             post:
               command: docker inspect mysql
