@@ -58,3 +58,11 @@ run_adify_with_ak_configurations() {
 
   TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(wget -qO- https://raw.githubusercontent.com/aditya7iyengar/adify/master/prelude.sh)
 }
+
+main() {
+  fetch_ak_scripts
+
+  run_adify_with_ak_configurations
+}
+
+main
