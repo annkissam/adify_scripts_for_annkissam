@@ -9,7 +9,7 @@
 ----
 
 
-[![Build Status](https://travis-ci.org/annkissam/adify_scripts_for_annkissam.svg?branch=master)](https://travis-ci.org/annkissam/adify_scripts_for_annkissam)
+[![Build Status](https://travis-ci.com/annkissam/adify_scripts_for_annkissam.svg?branch=master)](https://travis-ci.com/annkissam/adify_scripts_for_annkissam)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/annkissam/adify_scripts_for_annkissam/master/LICENSE)
 
 
