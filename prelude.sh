@@ -73,6 +73,12 @@ run_adify_with_ak_configurations() {
     noconfirm=${NO_CONFIRM}
   fi
 
+  if [[ -z "$NO_CLEANUP" ]]; then
+    nocleanup=false
+  else
+    nocleanup=${NO_CLEANUP}
+  fi
+
   if $noconfirm == true; then
     if $adify_test == true; then
       _announce_info "NO_CONFIRM, ADIFY_TEST"
@@ -83,7 +89,13 @@ run_adify_with_ak_configurations() {
     fi
   else
     _announce_info "CONFIRM MODE"
-    TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
+    if $nocleanup == true; then
+      _announce_info "NO CLEANUP MODE"
+      NO_CLEANUP="true" TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
+    else
+      _announce_info "CLEANUP MODE"
+      TOOLS_DIR="${HOME}/.adify_scripts_for_annkissam/tools" bash <(curl -s $adify_prelude_url)
+    fi
   fi
 }
 
