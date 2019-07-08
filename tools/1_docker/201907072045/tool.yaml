@@ -19,12 +19,8 @@ os_commands:
                 brew doctor
                 brew update
                 brew search docker
-                brew install docker docker-compose docker-machine xhyve docker-machine-driver-xhyve
-                brew cleanup
-                sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-                sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-                docker-machine create default --driver xhyve --xhyve-experimental-nfs-share
-                echo "eval $(docker-machine env default)" >> ~/.zshrc
+                brew cask install docker
+                open /Applications/Docker.app
                 source ~/.zshrc
               success: true
           down:
