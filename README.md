@@ -40,6 +40,7 @@ maintenance, refer the documentation for `adify`.
 
 ### CI
 
+- CI is set for OSX (Latest version as of 7/2019) and Ubuntu
 - By default CI runs in Mock mode, where it doesn't test everything. This is done
   to keep the test suite from taking 30 minutes. In order to override it, add
   `[FULL_TEST_CI]` to the commit message
